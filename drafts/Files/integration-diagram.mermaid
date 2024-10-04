@@ -1,0 +1,10 @@
+graph TD
+    A[Researcher] -->|Creates Survey| B[Qualtrics]
+    B -->|Survey Data| C[Qualdano Plugin]
+    C -->|Hashed Data| D[Qualdano Web App]
+    D -->|Blockchain Tx| E[Cardano Blockchain]
+    F[Participants] -->|Responses| B
+    G[Analysis Tools] -->|Import Data| B
+    D -->|Verification| G
+    H[Institutional Review Board] -->|Approval| A
+    I[Data Repositories] <-->|Data Exchange| D

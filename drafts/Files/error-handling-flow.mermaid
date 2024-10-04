@@ -1,0 +1,16 @@
+graph TD
+    A[Operation Start] -->|Execute| B{Error Occurs?}
+    B -->|No| C[Operation Complete]
+    B -->|Yes| D[Log Error]
+    D --> E{Error Type}
+    E -->|Network| F[Retry Operation]
+    E -->|Data| G[Data Validation]
+    E -->|Blockchain| H[Check Transaction Status]
+    F -->|Retry Limit Reached| I[Alert Admin]
+    G -->|Invalid Data| J[Request Data Correction]
+    H -->|Transaction Failed| K[Resubmit Transaction]
+    I --> L[Manual Intervention]
+    J --> M[User Corrects Data]
+    K -->|Resubmission Failed| I
+    L --> A
+    M --> A
