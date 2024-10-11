@@ -4,7 +4,17 @@ This document provides detailed explanations of the architectural and process di
 
 ## 1. High-Level System Architecture
 ```mermaid
-[[include diagrams/I01.mermaid]]
+graph TD
+    A[Qualtrics Survey Platform] -->|Survey Data| B[Qualtrics Plugin]
+    B -->|Hashed Data| C[Web Server]
+    C -->|Process Data| D[Smart Contract Executor]
+    D -->|Execute Contract| E[Cardano Blockchain]
+    F[User Interface] -->|Interact| C
+    F -->|View Results| C
+    G[Researcher] -->|Create Survey| A
+    G -->|Verify Data| F
+    H[Survey Participant] -->|Respond| A
+
 ```
 
 This diagram illustrates the main components of the Qualdano system and their interactions. It shows how data flows from the Qualtrics Survey Platform through our plugin, web server, and ultimately to the Cardano blockchain.
