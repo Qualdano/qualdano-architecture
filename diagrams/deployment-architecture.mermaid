@@ -1,22 +1,13 @@
 graph TD
-    subgraph "Client Side"
-        A[Web Browser] --> B[CDN]
-    end
-    subgraph "Server Side"
-        B --> C[Load Balancer]
-        C --> D[Web Server Cluster]
-        D --> E[Application Server Cluster]
-        E --> F[Database Cluster]
-        E --> G[Cardano Node]
-    end
-    subgraph "External Services"
-        E --> H[Qualtrics API]
-        I[Monitoring Services] --> D
-        I --> E
-        I --> F
-        I --> G
-    end
-    J[DevOps Tools] --> D
-    J --> E
-    J --> F
-    J --> G
+    A[Web Browser] --> B[CDN/Edge Network]
+    B --> C[Load Balancer]
+    C --> D[Next.js Server Cluster]
+    D --> E[Database Cluster]
+    D --> F[Cardano Node]
+    D --> G[Qualtrics API]
+    H[Monitoring Services] --> D
+    H --> E
+    H --> F
+    I[DevOps Tools] --> D
+    I --> E
+    I --> F
