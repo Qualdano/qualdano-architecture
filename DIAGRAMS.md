@@ -3,7 +3,7 @@
 This document provides detailed explanations of the architectural and process diagrams for the Qualdano project.
 
 ## 1. High-Level System Architecture
-![High-Level System Architecture](/diagrams/I01.png)
+![High-Level System Architecture](/diagrams/I01.mermaid)
 
 This diagram illustrates the main components of the Qualdano system and their interactions. It shows how data flows from the Qualtrics Survey Platform through our plugin, web server, and ultimately to the Cardano blockchain.
 
